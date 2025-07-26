@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(145deg, #ffecd2, #fcb69f);
+  font-family: 'Poppins', sans-serif;
+  color: #1e1e1e;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  overflow-x: hidden;
+}
+
+.game-container {
+  max-width: 640px;
+  width: 100%;
+  background-color: #ffffffdd;
+  backdrop-filter: blur(12px);
+  border-radius: 24px;
+  box-shadow: 0 8px 25px rgba(106, 5, 114, 0.2);
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 3px solid #6a0572;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h2 {
+  font-size: 2.4rem;
+  color: #6a0572;
+  margin-bottom: 1.6rem;
+  text-shadow: 0 2px 3px #fcb69f88;
+}
+
+p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.challenge-text {
+  font-size: 1.6rem;
+  margin: 2rem 0;
+  color: #1e1e1e;
+  background: #fef2ff;
+  border: 2px dashed #ff007f;
+  border-radius: 18px;
+  padding: 1.4rem;
+  box-shadow: inset 0 0 8px #ffd6e8;
+  min-height: 5rem;
+}
+
+.timer {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #ff6f00;
+  margin-bottom: 2rem;
+  animation: pulseTimer 1s infinite;
+}
+
+@keyframes pulseTimer {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.explode {
+  animation: explode 0.5s forwards;
+  color: #ff007f;
+  text-shadow: 0 0 30px #ff007f;
+}
+
+@keyframes explode {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(2.8);
+  }
+}
+
+.input-text,
+.input-number {
+  display: block;
+  margin: 0 auto 1.5rem;
+  padding: 1rem 1.3rem;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: 2px solid #6a0572;
+  background-color: #fffdfc;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-text:focus,
+.input-number:focus {
+  outline: none;
+  border-color: #b8ff00;
+  box-shadow: 0 0 10px #b8ff0055;
+}
+
+button {
+  margin: 1.5rem auto;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #b8ff00, #ff6f00);
+  color: #1e1e1e;
+  cursor: pointer;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 6px 14px rgba(255, 111, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(255, 111, 0, 0.6);
+}
+
+button:disabled {
+  background: #aaa;
+  color: #eee;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .game-container {
+    padding: 2rem 1.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .challenge-text {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+
+  .timer {
+    font-size: 3.8rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .input-text,
+  .input-number {
+    font-size: 1rem;
+  }
+}
